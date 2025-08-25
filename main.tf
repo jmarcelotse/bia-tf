@@ -14,14 +14,14 @@ provider "aws" {
   profile = "nxt"
 }
 
-resource "aws_instance" "bia-dev" {
-  ami           = "ami-02f3f602d23f1659d"
+resource "aws_instance" "bia-dev-tf" {
+  ami           = "ami-08a6efd148b1f7504"
   instance_type = "t3.micro"
   tags = {
     ambiente = "dev"
-    Name     = "bia-dev"
+    Name     = "bia-dev-tf"
   }
-  vpc_security_group_ids = ["sg-03b7ebc50d9cb400c"]
+  vpc_security_group_ids = ["sg-0285d77448b0e2f50"]
   root_block_device {
     volume_size = 10
   }
