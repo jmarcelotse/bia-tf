@@ -9,10 +9,9 @@ terraform {
   required_version = ">= 1.2.0"
 }
 
-
 provider "aws" {
   region  = "us-east-1"
-  profile = "bia"
+  profile = "nxt"
 }
 
 resource "aws_instance" "bia-dev" {
