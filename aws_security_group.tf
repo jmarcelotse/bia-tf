@@ -45,7 +45,7 @@ resource "aws_security_group" "bia_ec2" {
   tags_all = {
     Name = "bia-ec2"
   }
-  vpc_id = "vpc-03c4e823f9cde5442"
+  vpc_id = local.vpc_id
 }
 
 # __generated__ by Terraform from "sg-0c2285777df4fdd67"
@@ -82,7 +82,7 @@ resource "aws_security_group" "bia_web" {
   tags_all = {
     Name = "bia-web"
   }
-  vpc_id = "vpc-03c4e823f9cde5442"
+  vpc_id = local.vpc_id
 }
 
 # __generated__ by Terraform from "sg-0888f89335d04083c"
@@ -129,7 +129,7 @@ resource "aws_security_group" "bia_db" {
   tags_all = {
     Name = "bia-db"
   }
-  vpc_id = "vpc-03c4e823f9cde5442"
+  vpc_id = local.vpc_id
 }
 
 # __generated__ by Terraform from "sg-08aa7d1f323c15a04"
@@ -176,14 +176,14 @@ resource "aws_security_group" "bia_alb" {
   tags_all = {
     Name = "bia-alb"
   }
-  vpc_id = "vpc-03c4e823f9cde5442"
+  vpc_id = local.vpc_id
 }
 
 
 resource "aws_security_group" "bia-dev" {
   name        = "bia-dev"
   description = "acesso do bia-dev"
-  vpc_id      = "vpc-03c4e823f9cde5442"
+  vpc_id      = local.vpc_id
 
   ingress {
     description = "liberado para o mundo"
