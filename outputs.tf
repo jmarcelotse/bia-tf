@@ -10,7 +10,7 @@ output "instance_type" {
 
 output "aws_security_group_id" {
   description = "ID do security group criado"
-  value       = aws_security_group.bia-dev-tf-sg.id
+  value       = aws_security_group.bia-dev.id
 }
 
 output "public_ip" {
@@ -21,4 +21,10 @@ output "public_ip" {
 output "private_ip" {
   description = "IP privado da instância EC2"
   value       = aws_instance.bia-dev-tf.private_ip
+}
+
+output "rds_endpoint" {
+  description = "Endpoint do RDS criado da BIA"
+  value       = aws_db_instance.bia.endpoint
+
 }
