@@ -28,3 +28,10 @@ output "rds_endpoint" {
   value       = aws_db_instance.bia.endpoint
 
 }
+
+output "rds_secrets" {
+  description = "ARN do secret criado para o RDS"
+  # value       = aws_db_instance.bia.master_user_secret.0.arn
+  value = tolist(aws_db_instance.bia.master_user_secret)[0].secret_arn
+
+}

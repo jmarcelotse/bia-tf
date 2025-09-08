@@ -5,11 +5,14 @@ resource "aws_instance" "bia-dev-tf" {
     ambiente = "dev"
     Name     = var.instance_name
   }
-  vpc_security_group_ids = [aws_security_group.bia-dev.id]
+  subnet_id                   = local.subnet_zona_b
+  associate_public_ip_address = true
+  vpc_security_group_ids      = [aws_security_group.bia-dev.id]
   root_block_device {
     volume_size = 10
   }
 
   iam_instance_profile = aws_iam_instance_profile.role_acesso_ssm.name
   user_data            = file("userdata_biadev.sh")
+  key_name             = "nxt-tse"
 }

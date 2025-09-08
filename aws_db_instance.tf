@@ -3,20 +3,20 @@
 
 # __generated__ by Terraform from "bia"
 resource "aws_db_instance" "bia" {
-  allocated_storage                     = 20
-  allow_major_version_upgrade           = null
-  apply_immediately                     = null
-  auto_minor_version_upgrade            = true
-  availability_zone                     = "us-east-1a"
-  backup_retention_period               = 0
-  backup_window                         = "09:05-09:35"
-  ca_cert_identifier                    = "rds-ca-rsa2048-g1"
-  character_set_name                    = null
-  copy_tags_to_snapshot                 = false
-  custom_iam_instance_profile           = null
-  customer_owned_ip_enabled             = false
-  db_name                               = null
-  db_subnet_group_name                  = "default-vpc-03c4e823f9cde5442"
+  allocated_storage           = 20
+  allow_major_version_upgrade = null
+  apply_immediately           = null
+  auto_minor_version_upgrade  = true
+  availability_zone           = "us-east-1a"
+  backup_retention_period     = 0
+  backup_window               = "09:05-09:35"
+  ca_cert_identifier          = "rds-ca-rsa2048-g1"
+  character_set_name          = null
+  copy_tags_to_snapshot       = false
+  custom_iam_instance_profile = null
+  customer_owned_ip_enabled   = false
+  db_name                     = null
+  # db_subnet_group_name                  = "default-vpc-03c4e823f9cde5442"
   delete_automated_backups              = true
   deletion_protection                   = false
   domain                                = null
@@ -33,7 +33,7 @@ resource "aws_db_instance" "bia" {
   kms_key_id                            = null
   license_model                         = "postgresql-license"
   maintenance_window                    = "sat:04:18-sat:04:48"
-  manage_master_user_password           = null
+  manage_master_user_password           = true
   master_user_secret_kms_key_id         = null
   max_allocated_storage                 = 0
   monitoring_interval                   = 0
