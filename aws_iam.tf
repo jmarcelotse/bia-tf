@@ -99,10 +99,10 @@ resource "aws_iam_role_policy_attachment" "rds_full_access" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonRDSFullAccess"
 }
 
-resource "aws_iam_role_policy_attachment" "ssm_managed_instance_core" {
-  role       = aws_iam_role.role_acesso_ssm.name
-  policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
-}
+# resource "aws_iam_role_policy_attachment" "ssm_managed_instance_core" {
+#   role       = aws_iam_role.role_acesso_ssm.name
+#   policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+# }
 
 resource "aws_iam_role_policy_attachment" "quicksight_secrets_write_access" {
   role       = aws_iam_role.role_acesso_ssm.name
