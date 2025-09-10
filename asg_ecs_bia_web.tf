@@ -13,14 +13,18 @@ resource "aws_autoscaling_group" "ecs" {
     version = "$Latest"
   }
 
+  lifecycle {
+    ignore_changes = [desired_capacity]
+  }
+
   tag {
     key                 = "Name"
     value               = "cluster-bia-tf"
     propagate_at_launch = true
   }
-    tag {
+  tag {
     key                 = "AmazonECSManaged"
-    value = ""
+    value               = ""
     propagate_at_launch = true
   }
 }
